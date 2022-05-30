@@ -1,0 +1,26 @@
+﻿<Window x:Class="GeneratorHTML.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeneratorHTML"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Grid Height="80">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Načíst HTML" x:Name="btnNacistHTML" Grid.Column="0" Click="btnNacistHTML_Click"/>
+            <Button Content="Vytvořit HTML" x:Name="btnVytvoritHTML" Grid.Column="1" Click="btnVytvoritHTML_Click"/>
+            <Button Content="Uložit HTML" x:Name="btnUlozitHTML" Grid.Column="2"/>
+        </Grid>
+        <TextBox x:Name="txtObsah" Height="350"/>
+    </StackPanel>
+</Window>
