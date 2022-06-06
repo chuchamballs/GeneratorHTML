@@ -19,8 +19,8 @@
             </Grid.ColumnDefinitions>
             <Button Content="Načíst HTML" x:Name="btnNacistHTML" Grid.Column="0" Click="btnNacistHTML_Click"/>
             <Button Content="Vytvořit HTML" x:Name="btnVytvoritHTML" Grid.Column="1" Click="btnVytvoritHTML_Click"/>
-            <Button Content="Uložit HTML" x:Name="btnUlozitHTML" Grid.Column="2"/>
+            <Button Content="Uložit HTML" x:Name="btnUlozitHTML" Grid.Column="2" Click="btnUlozitHTML_Click"/>
         </Grid>
-        <TextBox x:Name="txtObsah" Height="350"/>
+        <TextBox x:Name="txtObsah" Height="350" IsReadOnly="False" AcceptsReturn="True"/>
     </StackPanel>
 </Window>

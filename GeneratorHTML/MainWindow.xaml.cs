@@ -23,6 +23,16 @@ namespace GeneratorHTML
     /// </summary>
     public partial class MainWindow : Window
     {
+        string HTMLskeleton = @"<!DOCTYPE html>
+        <html>
+            <head>
+              <title>HTML Skeleton</title>
+            </head>
+            <body>
+              Hello World!
+            </body>
+        </html>";
+        string adresaSouboru = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -35,6 +45,7 @@ namespace GeneratorHTML
             if(dialog.ShowDialog() == true)
             {
                 string obsahSouboru = File.ReadAllText(dialog.FileName);
+                adresaSouboru = dialog.FileName;
                 txtObsah.Text = obsahSouboru;
             }
             else
@@ -48,9 +59,17 @@ namespace GeneratorHTML
             VistaFolderBrowserDialog dialogSlozka = new VistaFolderBrowserDialog();
             if(dialogSlozka.ShowDialog() == true)
             {
-                string HTML = "Ahoj světe";
-                File.WriteAllText(dialogSlozka.SelectedPath + "/indes.html", HTML);
+                adresaSouboru = dialogSlozka.SelectedPath;
+                File.WriteAllText(dialogSlozka.SelectedPath + "/indes.html", HTMLskeleton);
             }
+        }
+
+        private void btnUlozitHTML_Click(object sender, RoutedEventArgs e)
+        {
+            string obsahTextboxu = txtObsah.Text;
+            File.WriteAllText(adresaSouboru, obsahTextboxu);
+
+            MessageBox.Show("Uloženo ty jeden chytrý člověku :)");
         }
     }
 }
